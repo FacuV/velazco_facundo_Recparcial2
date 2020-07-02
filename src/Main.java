@@ -1,5 +1,3 @@
-import arboles.Arbol;
-import died.estructuras.grafos.Arista;
 
 public class Main {
 
