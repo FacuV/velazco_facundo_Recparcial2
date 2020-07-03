@@ -5,23 +5,8 @@ import java.util.Arrays;
 
 public class Pregunta5 {
 
-    /*
-    public static int detectarArreglos(int[] V1, int[] V2){
-        int agregado = detectarArreglosAux(V1,V2);
-        int rtn=-1;
-        for (int i=0;i<V1.length;i++){
-            if(V1[i] == agregado){rtn=i;}
-        }
-        return rtn;
-    }
-    public static int detectarArreglosAux(int[] V1, int[] V2){
-        if(V1[0] == V2[0]){
-            return detectarArreglosAux(Arrays.copyOfRange(V1,1,V1.length),Arrays.copyOfRange(V2,1,V2.length));
-        }else{
-            return V1[0];
-        }
-    }
-         */
+    //Pregunta5, arreglo V1 es el distorcionado
+
     public static int detectarArreglos(int[] V1, int[] V2){
         int agregado = detectarArreglosAux(V1,V2);
         int rtn=-1;
