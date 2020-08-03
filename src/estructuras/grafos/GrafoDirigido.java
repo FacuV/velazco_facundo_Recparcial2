@@ -1,7 +1,5 @@
 package estructuras.grafos;
 
-import estructuras.grafos.Grafo;
-import estructuras.grafos.Vertice;
 
 import java.util.*;
 
