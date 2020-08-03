@@ -4,7 +4,6 @@ import estructuras.grafos.Vertice;
 public class Main {
 
     public static void main(String[] args) {
-
         Grafo<Integer> g1 = new Grafo<Integer>();
 
         g1.addNodo(4);

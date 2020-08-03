@@ -1,25 +1,20 @@
 package estructuras.grafos;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Set;
 import java.util.Stack;
-import java.util.TreeSet;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
 
 public class Grafo<T> {
-	private List<Arista<T>> aristas;
-	private List<Vertice<T>> vertices;
+	protected List<Arista<T>> aristas;
+	protected List<Vertice<T>> vertices;
 
 	public Grafo(){
 		this.aristas = new ArrayList<Arista<T>>();
@@ -62,7 +57,7 @@ public class Grafo<T> {
 	}
 	
 
-	private List<Vertice<T>> getAdyacentes(Vertice<T> unNodo){ 
+	public List<Vertice<T>> getAdyacentes(Vertice<T> unNodo){
 		List<Vertice<T>> salida = new ArrayList<Vertice<T>>();
 		for(Arista<T> enlace : this.aristas){
 			if( enlace.getInicio().equals(unNodo)){
