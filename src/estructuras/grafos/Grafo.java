@@ -1,15 +1,7 @@
 package estructuras.grafos;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
-
 
 
 public class Grafo<T> {
@@ -44,6 +36,33 @@ public class Grafo<T> {
 	public Vertice<T> getNodo(T valor){
 		return this.vertices.get(this.vertices.indexOf(new Vertice<T>(valor)));
 	}
+
+	//EJERCICIO GRAFOS RECUPERATORIO
+	//
+	// Escribir en la clase Grafo un método que reciba como argumento un nodo N y un valor natural P,
+	// y devuelva  una lista con todos los nodos a los que se puede alcanzar desde el nodo N1 con
+	// P transiciones.
+	//
+	public Set<Vertice<T>> nodosAlcanzables(Vertice<T> N, int P){
+		Set<Vertice<T>> aux;
+		Set<Vertice<T>> resultado = new HashSet<>();
+		if (P == 0){
+			aux = new HashSet<>();
+			aux.add(N);
+			return aux;
+		}
+		if(P == 1){
+			return Set.copyOf(getAdyacentes(N));
+		}
+		aux = Set.copyOf(getAdyacentes(N));
+		if(aux.isEmpty()){return resultado;}
+		for (Vertice<T> nodoAdy: aux){
+			resultado.addAll(nodosAlcanzables(nodoAdy,P-1));
+		}
+		return resultado;
+	}
+
+
 
 	public List<T> getAdyacentes(T valor){ 
 		Vertice<T> unNodo = this.getNodo(valor);
